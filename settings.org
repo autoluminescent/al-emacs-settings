@@ -111,24 +111,26 @@
 * Options
 
 #+BEGIN_SRC emacs-lisp
-(when (member "DejaVu Sans Mono" (font-family-list))
-  (set-face-attribute 'default nil :font "DejaVu Sans Mono-11"))
-(set-default 'truncate-lines nil)
-(set-default 'truncate-partial-width-windows nil)
-(add-hook 'org-mode-hook
-          (lambda () 
-            (setq truncate-lines nil)
-            (setq truncate-partial-width-windows nil)))
-(column-number-mode t)
-(show-paren-mode 1)
-(setq show-paren-style 'expression)
+  (set-default 'truncate-lines nil)
+  (set-default 'truncate-partial-width-windows nil)
+  (add-hook 'org-mode-hook
+            (lambda () 
+              (setq truncate-lines nil)
+              (setq truncate-partial-width-windows nil)))
+  (column-number-mode t)
+  (show-paren-mode 1)
+  (setq show-paren-style 'expression)
 
-(require 'paren)
-(set-face-background 'show-paren-match-face "SlateBlue4")
-(set-background-color "midnight blue")
-(set-foreground-color "NavajoWhite1")
-(setq split-width-threshold 100)
-(set-cursor-color "NavajoWhite2")
-(setq kill-whole-line t)
-(customize-set-variable 'indent-tabs-mode nil)
+  (require 'paren)
+  (set-face-background 'show-paren-match-face "SlateBlue4")
+  (setq split-width-threshold 100)
+  (setq kill-whole-line t)
+  (customize-set-variable 'indent-tabs-mode nil)
+#+END_SRC
+
+* Theme
+
+#+BEGIN_SRC emacs-lisp
+  (load-theme 'arjen-grey t)
+  (set-face-attribute 'default (selected-frame) :height 120)
 #+END_SRC
